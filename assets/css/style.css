@@ -1,0 +1,210 @@
+@import url('https://fonts.maateen.me/adorsho-lipi/font.css');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.defult-container {
+  max-width: 1000px; /* Limits the container's width */
+  margin: 0 auto;    /* Centers the container horizontally */
+  padding: 0 16px;   /* Adds padding for smaller screens */
+  width: 100%;       /* Ensures the container spans the full width of the viewport */
+  box-sizing: border-box; /* Includes padding and border in the width */
+}
+html{
+  font-family: 'Adorsho Lipi', sans-serif;
+}
+:root {
+  --orange-red: #FF4500; /* Orange-Red */
+}
+/* navbar start  */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #333; */
+  padding: 0.5em 1em;
+
+}
+.bgdark{
+  background-color: #0B1222;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: orangered;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+ 
+}
+
+/* .nav-links li a:hover {
+  background-color: #575757;
+} */
+
+.menu-icon {
+  display: none;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.off-canvas {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 250px;
+  height: 100%;
+  background-color: #ffffff63;
+  color: orangered;
+  display: block;
+  flex-direction: column;
+  padding: 1em;
+  transition: left 1.3s;
+  z-index: 1000;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.off-canvas.active {
+  left: 0;
+}
+
+.close-btn {
+	align-self: flex-end;
+	background: none;
+	border: none;
+	color: #ee5322;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+      display: none;
+  }
+
+  .menu-icon {
+      display: block;
+  }
+}
+.off-canvas .nav-links {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 1em; /* Add spacing between items */
+  padding: 0;
+  margin: 0;
+}
+
+.off-canvas .nav-links li {
+  list-style: none; /* Remove bullet points */
+}
+
+.off-canvas .nav-links li a {
+  display: flex; /* Ensure full width is clickable */
+  color: #ee5322;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.off-canvas .nav-links li a:hover {
+  background-color: #575757;
+}
+/* end navbar */
+.mash {
+  width: 305px;
+  height: 305px;
+  background: #958cff66;
+  position: absolute;
+  z-index: -100;
+  border-radius: 50%;
+  filter: blur(25px);
+  opacity: 50;
+  right: 12px;
+  bottom: 0;
+}
+.mash:nth-child(2) {
+	width: 305px;
+	height: 305px;
+	background: #88e3ff66;
+	position: absolute;
+	z-index: -100;
+	border-radius: 50%;
+	filter: blur(25px);
+	opacity: 50;
+	left: 12px;
+  top: 0;
+}
+/* start homepage */
+
+  .Carousel-slider {
+    height: 560px;
+    position: relative;
+ 
+}
+
+.Carousel-slider.fullwidth {
+    height: 500px;
+}
+
+.Carousel-slider.fullwidth .slider-item {
+    height: 480px;
+    line-height: 480px;
+    width: 100%
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: 0 50%;
+	perspective: 800px  !important;
+}
+
+.slider-item {
+    box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.12);
+    display: none;
+    height: 320px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 320px;
+    cursor: pointer;
+	border: 5px solid #ffc107;
+}
+.superHero1 {background-image:url("../image/home/1.jpg");background-position: center; background-size: cover; border-radius: 50px !important;}
+.superHero2 {background: url("../image/home/2.jpg"); background-position: center; background-size: cover; border-radius: 50px !important;}
+.superHero3 {background: url("../image/home/3.jpg"); background-position: center; background-size: cover; border-radius: 50px !important;}
+.superHero4 {background: url("../image/home/4.png"); background-position: center; background-size: cover; border-radius: 50px !important;}
+.superHero5 {background: url("../image/home/5.jpg"); background-position: center; background-size: cover; border-radius: 50px !important;}
+.superHero6 {background: url("../image/home/6.jpg"); background-position: cover; background-size: cover; border-radius: 50px !important;}
+
+/* facilitis start */
+
+.box{
+  border: 0.6px solid #dbdbdb;
+  border-radius: 10px;
+}
+.box p{
+  font-size: 14px;
+  text-align: justify;
+}
