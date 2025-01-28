@@ -17,6 +17,28 @@ html{
 :root {
   --orange-red: #FF4500; /* Orange-Red */
 }
+/* start top btn  */
+.back-to-top-btn {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: #ffffff11;
+	color: black;
+	border: none;
+	border-radius: 20px;
+	padding: 11px;
+	font-size: 20px;
+	cursor: pointer;
+	display: none;
+	z-index: 1000;
+	width: 50px;
+	box-shadow: 0px 1px 12px #000;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+.back-to-top-btn:hover {
+  background-color: #ee2f24;
+}
 /* navbar start  */
 .navbar {
   display: flex;
@@ -129,6 +151,9 @@ html{
   background-color: #575757;
 }
 /* end navbar */
+
+/* start homepage */
+
 .mash {
   width: 305px;
   height: 305px;
@@ -153,8 +178,6 @@ html{
 	left: 12px;
   top: 0;
 }
-/* start homepage */
-
   .Carousel-slider {
     height: 560px;
     position: relative;
@@ -203,8 +226,19 @@ html{
 .box{
   border: 0.6px solid #dbdbdb;
   border-radius: 10px;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
+.box:hover{
+  border: 0.6px solid #7d39e9;
 }
 .box p{
   font-size: 14px;
   text-align: justify;
+}
+.box i {
+	font-size: 40px;
+	background: linear-gradient(45deg, #131112, #fff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
