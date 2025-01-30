@@ -3,9 +3,13 @@ function toggleTheme(switchElement) {
   if (switchElement.checked) {
       document.body.classList.add('bgdark', 'text-white');
       document.body.classList.remove('bg-light', 'text-dark');
+      dropdownNavbar.classList.add('bgdark', 'text-white');
+      dropdownNavbar.body.classList.remove('bg-light', 'text-dark');
   } else {
       document.body.classList.add('bg-light', 'text-dark');
       document.body.classList.remove('bgdark', 'text-white');
+      dropdownNavbar.classList.add('bg-light', 'text-dark');
+      dropdownNavbar.classList.remove('bgdark', 'text-white');
   }
 }
 // end dark mode 

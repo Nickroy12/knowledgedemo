@@ -1,4 +1,4 @@
-@import url('https://fonts.maateen.me/adorsho-lipi/font.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Bangla:ital@0;1&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@
   box-sizing: border-box; /* Includes padding and border in the width */
 }
 html{
-  font-family: 'Adorsho Lipi', sans-serif;
+  font-family: "Poppins", serif;
 }
 :root {
   --orange-red: #FF4500; /* Orange-Red */
@@ -73,7 +73,40 @@ html{
   transition: background-color 0.3s;
  
 }
+.dropdownNavbar {
 
+	position: absolute;
+	list-style: none;
+
+	box-shadow: 1px 2px 4px #d9d9d9;
+	z-index: 1000;
+	border-radius: 20px;
+	padding: 12px;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+
+  
+  
+}
+.dropHover:hover .dropdownNavbar{
+
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdownNavbar li{
+  padding: 2px;
+
+}
+.dropdownNavbar li a:hover {
+  background-color: #ed5023;
+  color:#fff;
+}
 /* .nav-links li a:hover {
   background-color: #575757;
 } */
@@ -146,9 +179,34 @@ html{
   border-radius: 4px;
   transition: background-color 0.3s;
 }
+.dropdownNav {
+	position: absolute;
+	list-style: none;
+	box-shadow: 1px 2px 4px #d9d9d9;
+	z-index: 1000;
+	border-radius: 20px;
+	padding: 12px;
+	font-weight: 500;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-10px);
+	transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+	left: 58px;
+}
+.dropHover:hover .dropdownNav{
+
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdownNav li{
+  padding: 2px;
+
+}
 
 .off-canvas .nav-links li a:hover {
-  background-color: #575757;
+  background-color: #2c2c2c80;
+  color:#fff;
 }
 /* end navbar */
 
