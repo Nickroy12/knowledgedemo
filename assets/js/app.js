@@ -107,4 +107,66 @@ document.addEventListener('DOMContentLoaded', () => {
               backToTopBtn.style.opacity = "0";
           }, 800); // Wait for the scroll animation to finish
       }
-      
+            // Get the button
+            // start the countdown 
+            // Function to convert Bangla numbers to English numbers
+function banglaToEnglishNumber(banglaNum) {
+  const banglaDigits = "০১২৩৪৫৬৭৮৯";
+  const englishDigits = "0123456789";
+  return banglaNum.replace(/[০-৯]/g, digit => englishDigits[banglaDigits.indexOf(digit)]);
+}
+
+// Function to convert English numbers to Bangla numbers
+function englishToBanglaNumber(englishNum) {
+  const banglaDigits = "০১২৩৪৫৬৭৮৯";
+  const englishDigits = "0123456789";
+  return englishNum.toString().replace(/[0-9]/g, digit => banglaDigits[englishDigits.indexOf(digit)]);
+}
+
+// Function to animate the counter
+function animateCounter(counter) {
+  let targetBangla = counter.getAttribute("data-target"); // Get Bangla number
+  let target = parseInt(banglaToEnglishNumber(targetBangla)); // Convert to English
+  let count = 0;
+  let increment = target / 100; // Adjust speed
+
+  let updateCounter = setInterval(() => {
+      count += increment;
+      if (count >= target) {
+          clearInterval(updateCounter);
+          counter.innerText = englishToBanglaNumber(target); // Convert back to Bangla
+      } else {
+          counter.innerText = englishToBanglaNumber(Math.ceil(count));
+      }
+  }, 20);
+
+  counter.dataset.interval = updateCounter; // Store interval ID
+}
+
+// Function to reset counter
+function resetCounter(counter) {
+  clearInterval(counter.dataset.interval); // Stop previous counting
+  counter.innerText = "০"; // Reset to Bangla zero
+  delete counter.dataset.counted; // Allow re-counting
+}
+
+// Intersection Observer to trigger animation
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+      let counter = entry.target;
+      if (entry.isIntersecting) {
+          if (!counter.dataset.counted) {
+              counter.dataset.counted = true;
+              animateCounter(counter);
+          }
+      } else {
+          resetCounter(counter); // Reset when out of view
+      }
+  });
+}, { threshold: 0.5 }); // Runs when 50% of the element is visible
+
+// Observe each counter
+document.querySelectorAll(".counter").forEach(counter => {
+  observer.observe(counter);
+});
+
