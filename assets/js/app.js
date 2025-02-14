@@ -1,18 +1,53 @@
 // dark mode function
-function toggleTheme(switchElement) {
-  if (switchElement.checked) {
-      document.body.classList.add('bgdark', 'text-white');
-      document.body.classList.remove('bg-light', 'text-dark');
-      dropdownNav.classList.add('bgdark', 'text-white');
-      dropdownNav.body.classList.remove('bg-light', 'text-dark');
-      
-  } else {
-      document.body.classList.add('bg-light', 'text-dark');
-      document.body.classList.remove('bgdark', 'text-white');
-      dropdownNav.classList.add('bg-light', 'text-dark');
-      dropdownNavbar.classList.remove('bgdark', 'text-white');
-  }
-}
+  function toggleTheme() {
+            const body = document.body;
+            const modeText = document.getElementById("modeText");
+            const toggleIcon = document.getElementById("toggleIcon");
+
+            // Multiple images
+            const themeImages = [
+                { element: document.getElementById("themeImage1"), lightSrc: "light-theme-image1.png", darkSrc: "dark-theme-image1.png" },
+                { element: document.getElementById("themeImage2"), lightSrc: "light-theme-image2.png", darkSrc: "dark-theme-image2.png" }
+            ];
+
+            // Multiple divs
+            const themeBoxes = [
+                document.getElementById("themeBox1"),
+                document.getElementById("themeBox2")
+            ];
+
+            // Toggle light mode
+            body.classList.toggle("light-mode");
+
+            if (body.classList.contains("light-mode")) {
+                modeText.textContent = "Light Mode";
+                toggleIcon.src = "light-mode.png";
+
+                // Change images to light mode
+                themeImages.forEach(item => {
+                    item.element.src = item.lightSrc;
+                });
+
+                // Update div styles
+                themeBoxes.forEach(box => {
+                    box.classList.remove("dark-box");
+                });
+
+            } else {
+                modeText.textContent = "Dark Mode";
+                toggleIcon.src = "dark-mode.png";
+
+                // Change images to dark mode
+                themeImages.forEach(item => {
+                    item.element.src = item.darkSrc;
+                });
+
+                // Update div styles
+                themeBoxes.forEach(box => {
+                    box.classList.add("dark-box");
+                });
+            }
+        }
 // end dark mode 
 // offCanvas start 
 const menuIcon = document.getElementById('menu-icon');

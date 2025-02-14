@@ -51,10 +51,60 @@ html{
   padding: 0.5em 1em;
 
 }
-.bgdark{
-  background-color: #0B1222;
+:root {
+  --bg-light: #f8f9fa;
+  --bg-dark: #212529;
+  --text-light: #212529;
+  --text-dark: #f8f9fa;
+  --toggle-bg: #ddd;
+  --toggle-dark: #4a90e2;
+}
+.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
 }
 
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.toggle-switch {
+  width: 55px;
+  height: 30px;
+  background: var(--toggle-bg);
+  border-radius: 30px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.toggle-switch::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  background: url('../image/light.png') no-repeat center;
+  background-size: contain;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.dark-mode .toggle-switch {
+  background: var(--toggle-dark);
+}
+
+.dark-mode .toggle-switch::before {
+  background: url('../image/dark.png') no-repeat center;
+  background-size: contain;
+  transform: translateX(25px);
+}
 .logo {
   font-size: 1.5em;
   font-weight: bold;
