@@ -1,53 +1,16 @@
 // dark mode function
-  function toggleTheme() {
-            const body = document.body;
-            const modeText = document.getElementById("modeText");
-            const toggleIcon = document.getElementById("toggleIcon");
+function toggleTheme() {
+  const body = document.body;
+  const modeText = document.getElementById("modeText");
 
-            // Multiple images
-            const themeImages = [
-                { element: document.getElementById("themeImage1"), lightSrc: "light-theme-image1.png", darkSrc: "dark-theme-image1.png" },
-                { element: document.getElementById("themeImage2"), lightSrc: "light-theme-image2.png", darkSrc: "dark-theme-image2.png" }
-            ];
+  body.classList.toggle("dark-mode");
 
-            // Multiple divs
-            const themeBoxes = [
-                document.getElementById("themeBox1"),
-                document.getElementById("themeBox2")
-            ];
-
-            // Toggle light mode
-            body.classList.toggle("light-mode");
-
-            if (body.classList.contains("light-mode")) {
-                modeText.textContent = "Light Mode";
-                toggleIcon.src = "light-mode.png";
-
-                // Change images to light mode
-                themeImages.forEach(item => {
-                    item.element.src = item.lightSrc;
-                });
-
-                // Update div styles
-                themeBoxes.forEach(box => {
-                    box.classList.remove("dark-box");
-                });
-
-            } else {
-                modeText.textContent = "Dark Mode";
-                toggleIcon.src = "dark-mode.png";
-
-                // Change images to dark mode
-                themeImages.forEach(item => {
-                    item.element.src = item.darkSrc;
-                });
-
-                // Update div styles
-                themeBoxes.forEach(box => {
-                    box.classList.add("dark-box");
-                });
-            }
-        }
+  if (body.classList.contains("dark-mode")) {
+      modeText.textContent = "Dark Mode";
+  } else {
+      modeText.textContent = "Light Mode";
+  }
+}
 // end dark mode 
 // offCanvas start 
 const menuIcon = document.getElementById('menu-icon');
