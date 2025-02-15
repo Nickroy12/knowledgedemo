@@ -1,16 +1,22 @@
 // dark mode function
 function toggleTheme() {
   const body = document.body;
-  const modeText = document.getElementById("modeText");
+  const changeImg = document.querySelector('#logoCng');
+  const HideDiv = document.getElementById('hideDiv'); // Ensure 
+
+
 
   body.classList.toggle("dark-mode");
 
   if (body.classList.contains("dark-mode")) {
-      modeText.textContent = "Dark Mode";
+      changeImg.src = "assets/image/darklogo.png";
+      HideDiv.style.background = "linear-gradient(to top,#121212,#121212,#12121240)";
   } else {
-      modeText.textContent = "Light Mode";
+      changeImg.src = "assets/image/logo.png";
+      HideDiv.style.background = "linear-gradient(to top,#fff,#fff,#2125296b)";
   }
 }
+
 // end dark mode 
 // offCanvas start 
 const menuIcon = document.getElementById('menu-icon');
@@ -168,3 +174,13 @@ document.querySelectorAll(".counter").forEach(counter => {
   observer.observe(counter);
 });
 
+document.getElementById("seeMore").addEventListener("click", function() {
+  let hideDiv = document.getElementById("hideDiv");
+  if (hideDiv.style.top === "0px") {
+      hideDiv.style.top = "-326px";
+      hideDiv.style.height = "317px" ; // Hide
+  } else {
+      hideDiv.style.top = "0px"; // Show
+      hideDiv.style.height = "0px" ;
+  }
+});

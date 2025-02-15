@@ -11,6 +11,10 @@
   width: 100%;       /* Ensures the container spans the full width of the viewport */
   box-sizing: border-box; /* Includes padding and border in the width */
 }
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
 html{
   font-family: "Poppins", serif;
 }
@@ -51,6 +55,36 @@ html{
   padding: 0.5em 1em;
 
 }
+.toggle-btn {
+  width: 60px;
+  height: 30px;
+  background-color: #444;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease-in-out;
+}
+
+.toggle-btn img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Animated button effect */
+.toggle-circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
 :root {
   --bg-light: #f8f9fa;
   --bg-dark: #212529;
@@ -543,4 +577,28 @@ html{
 .stars{
   color:#ffa701;
 }
-
+#hideDiv {
+	height: 317px;
+    background: linear-gradient(to top, rgb(255, 255, 255), rgb(255, 255, 255), rgba(255, 255, 255, 0.42));
+	position: relative;
+	top: -326px;
+  transition: all 0.9s ease-in-out;
+}
+.anibtn {
+  background: linear-gradient(45deg, #fab910,#ea3927);
+  color: white;
+  padding: 15px 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.anibtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 15px rgba(255, 75, 43, 0.5);
+  background: linear-gradient(45deg, #ea3927,#fab910);
+}
+.anibtn:active {
+  transform: scale(0.9);
+}
