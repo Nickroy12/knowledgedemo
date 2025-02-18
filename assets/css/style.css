@@ -574,31 +574,21 @@ html{
   height: 40px;
   border-radius: 50%;
 }
-.stars{
-  color:#ffa701;
-}
-#hideDiv {
-	height: 317px;
-    background: linear-gradient(to top, rgb(255, 255, 255), rgb(255, 255, 255), rgba(255, 255, 255, 0.42));
+.stars {
+	color: #ffa701;
 	position: relative;
-	top: -326px;
-  transition: all 0.9s ease-in-out;
+	top: -17px;
 }
-.anibtn {
-  background: linear-gradient(45deg, #fab910,#ea3927);
-  color: white;
-  padding: 15px 15px;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+
+/* end of comment box  */
+/* start footer  */
+footer a {
+	text-decoration: none;
+	color: #f19b1f;
+	font-weight: 600;
 }
-.anibtn:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 4px 15px rgba(255, 75, 43, 0.5);
-  background: linear-gradient(45deg, #ea3927,#fab910);
-}
-.anibtn:active {
-  transform: scale(0.9);
+footer a:hover{
+  text-decoration: none;
+  color: #f19b1f;
+  font-weight: 600;
 }

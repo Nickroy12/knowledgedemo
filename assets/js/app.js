@@ -174,13 +174,4 @@ document.querySelectorAll(".counter").forEach(counter => {
   observer.observe(counter);
 });
 
-document.getElementById("seeMore").addEventListener("click", function() {
-  let hideDiv = document.getElementById("hideDiv");
-  if (hideDiv.style.top === "0px") {
-      hideDiv.style.top = "-326px";
-      hideDiv.style.height = "317px" ; // Hide
-  } else {
-      hideDiv.style.top = "0px"; // Show
-      hideDiv.style.height = "0px" ;
-  }
-});
+
