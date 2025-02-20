@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 .defult-container {
   max-width: 1000px; /* Limits the container's width */
@@ -12,7 +13,7 @@
   box-sizing: border-box; /* Includes padding and border in the width */
 }
         body.dark-mode {
-            background-color: #121212;
+            background-color: #0E1629;
             color: white;
         }
 html{
@@ -660,4 +661,19 @@ input[type=text] {
 input[type=submit]:hover{
   background: linear-gradient(45deg,#ed4b24,#f19b1f);
 }
+/* end hover  */
+/* end first / index page  */
 
+/* start course page  */
+.img-hover {
+	border: 2px solid #31C6B8;
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
+}
+.img-hover:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: -9px 0px 23px #31C6B8, 9px 0px 19px #7d39e9a8 !important;
+}
+.List li {
+  margin: 12px  0px;
+}
