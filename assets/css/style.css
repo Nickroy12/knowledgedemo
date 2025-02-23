@@ -5,6 +5,24 @@
   box-sizing: border-box;
   list-style: none;
 }
+.dark-back {
+
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  
+  /* Applying magic gradient mask */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+}
+.light-back {
+
+	background: linear-gradient(to right, rgba(225, 218, 218, 0.41) 1px, #0000 1px), linear-gradient(to bottom, rgba(43, 40, 40, 0.14) 1px, #0000 1px);
+	background-size: 40px 40px;
+	-webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 200%);
+	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 200%);
+
+}
 .defult-container {
   max-width: 1000px; /* Limits the container's width */
   margin: 0 auto;    /* Centers the container horizontally */
@@ -97,6 +115,7 @@ html{
 .dark-mode {
   background-color: var(--bg-dark);
   color: var(--text-dark);
+  transition:all 0.6s ease-in;
 }
 
 .toggle-container {

@@ -3,18 +3,23 @@ function toggleTheme() {
   const body = document.body;
   const changeImg = document.querySelector('#logoCng');
   const HideDiv = document.getElementById('hideDiv'); // Ensure 
+  const banner = document.getElementById('banner');
 
 
 
   body.classList.toggle("dark-mode");
 
+
+
   if (body.classList.contains("dark-mode")) {
-      changeImg.src = "assets/image/darklogo.png";
-      HideDiv.style.background = "linear-gradient(to top,#121212,#121212,#12121240)";
+      banner.classList.add('dark-back');
+      banner.classList.remove('light-back');
+      
   } else {
-      changeImg.src = "assets/image/logo.png";
-      HideDiv.style.background = "linear-gradient(to top,#fff,#fff,#2125296b)";
+    banner.classList.add('light-back');
+    banner.classList.remove('dark-back');
   }
+  
 }
 
 // end dark mode 
