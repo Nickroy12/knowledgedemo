@@ -696,3 +696,86 @@ input[type=submit]:hover{
 .List li {
   margin: 12px  0px;
 }
+.timeline-container {
+ 
+
+  height: 400px;  /* Fixed height */
+  overflow-y: scroll;  /* Enables vertical scrolling */
+Optional: for better visibility */
+  padding: 10px;
+}
+.timeline {
+position: relative;
+padding-left: 0px; /* Increased space */
+}
+/* Vertical Line */
+.timeline::before {
+content: "";
+position: absolute;
+left: 11px;  /* Shifted slightly left */
+top: 0;
+width: 2px;
+height: 100%;
+background: #f19b1f;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+  padding-left: 40px;
+  position: relative;
+}
+/* Dots on the timeline */
+.timeline-item::before {
+content: "";
+position: absolute;
+left: 5px;  /* Moved left slightly to separate from the line */
+top: 10px;
+width: 15px;
+height: 15px;
+background: #f19b1f;
+border-radius: 50%;
+border: 3px solid #0f172a; /* Matches the background */
+}
+.timeline-title {
+  font-size: 18px;
+ 
+  
+}
+.timeline-content {
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.tags {
+  margin-top: 10px;
+}
+.tag {
+	display: inline-block;
+	border: 1px solid #f19b1f;
+
+	padding: 5px 10px;
+	border-radius: 15px;
+	font-size: 12px;
+	text-decoration: none;
+	margin: 3px;
+  transition: all ease-in-out 0.6s;
+}
+
+/* Scrollbar Styling */
+.timeline-container::-webkit-scrollbar {
+  width: 1px; /* Thin scrollbar */
+}
+
+.timeline-container::-webkit-scrollbar-track {
+ 
+  border-radius: 30px; /* Rounded scrollbar */
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+  background:#f19b1f; /* Bright blue thumb */
+  border-radius: 30px; /* Rounded thumb */
+}
+
+.timeline-container::-webkit-scrollbar-thumb:hover {
+  background: #008fcc; /* Darker blue on hover */
+}
