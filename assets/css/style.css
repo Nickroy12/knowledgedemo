@@ -784,3 +784,16 @@ border: 3px solid #0f172a; /* Matches the background */
 .border-bottom-dark{
   border-bottom: 1px solid #f19b1f;
 }
+.enrollBtn{
+  outline: none;
+  border:none;
+ background:  linear-gradient(45deg,#f19b1f,#ed4b24);
+ width: 130px;
+ padding: 6px;
+ border-radius: 20px;
+ transition: all 0.3s ease-in-out;
+}
+.enrollBtn:hover{
+  background:  linear-gradient(45deg,#ed4b24,#f19b1f);
+  transform: scale(1.1);
+}
